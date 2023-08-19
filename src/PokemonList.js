@@ -4,12 +4,9 @@ import Card from "./Card"
 
 function PokemonList(props) {
     const style={
-        borderColor:"black",
-        borderWidth:2,
-        borderStyle:"solid",
         width:550,
-        height:350,
         padding:20,
+        marginBottom:20
         
         
     }
@@ -19,7 +16,8 @@ function PokemonList(props) {
       flexDirection:"row",
       justifyContent:"center",
       gap:10,
-      alignItems:"center"
+      alignItems:"center",
+      marginTop:20
         
     }
 

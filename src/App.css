@@ -1,27 +1,36 @@
 *{
-  box-sizing: border-box;
-  gap: 0;
-  margin: 0;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+.App{
+  position: relative;
+  min-height: 100vh;
 }
 header{
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #D41E00;
 }
 
 main{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap:100px;
-  align-items: center;
-  min-height: 80vh;
-  border:1px solid black;
+  justify-content: space-around;
+  gap:20px;
+  background-color:#F5631A;
+  padding-bottom: 3.5rem;
 }
 footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height:3.5rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border:1px solid black
+
 }
