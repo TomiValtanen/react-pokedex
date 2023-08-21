@@ -22,8 +22,11 @@ function PokemonList(props) {
     }
 
     const buttonStyle={
-        height:30,
-        width:70,
+        height:40,
+        width:80,
+        borderRadius:10,
+        backgroundColor:"#FEEBA0",
+        fontSize:16,
     }
 
     return (

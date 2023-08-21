@@ -8,13 +8,50 @@ function App() {
   const [pokemon, setPokemon] = useState([])
   const [singlePoke, setSinglePoke] = useState({
     name: "Charmander",
+    types: [{
+      type: {
+        name: "fire"
+      }
+    }],
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    hp: 39,
-    attack: 52,
-    defense: 43,
-    specialAttack: 60,
-    specialDefense: 50,
-    speed: 65
+    stats: [{
+      base_stat: 39,
+      stat: {
+        name: "hp"
+      }
+    },
+    {
+      base_stat: 52,
+      stat: {
+        name: "attack"
+      }
+    },
+    {
+      base_stat: 43,
+      stat: {
+        name: "defense"
+      }
+    },
+    {
+      base_stat: 60,
+      stat: {
+        name: "special Attack"
+      }
+    },
+    {
+      base_stat: 50,
+      stat: {
+        name: "special Defense"
+      }
+    },
+    {
+      base_stat: 65,
+      stat: {
+        name: "speed"
+      }
+    },
+
+    ]
   })
   const [URL, setURL] = useState("https://pokeapi.co/api/v2/pokemon/")
   const [loading, setLoading] = useState(true)
@@ -42,7 +79,7 @@ function App() {
       setPokemon(responses)
     })
   }
- 
+
 
   function goToNextPage() {
     setURL(nextPage)
@@ -57,13 +94,9 @@ function App() {
       if (poke.data.id == e.currentTarget.id) {
         setSinglePoke({
           name: poke.data.name,
+          types: poke.data.types.map(type => type),
           img: poke.data.sprites.front_default,
-          hp: poke.data.stats[0].base_stat,
-          attack: poke.data.stats[1].base_stat,
-          defense: poke.data.stats[2].base_stat,
-          specialAttack: poke.data.stats[3].base_stat,
-          specialDefense: poke.data.stats[4].base_stat,
-          speed: poke.data.stats[5].base_stat
+          stats:poke.data.stats.map(stat=>stat)
         })
       }
     })

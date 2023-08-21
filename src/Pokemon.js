@@ -1,4 +1,5 @@
 import React from "react"
+import { v4 as uuidv4 } from 'uuid'
 
 
 function Pokemon({ singlePokemon, loading }) {
@@ -33,12 +34,8 @@ function Pokemon({ singlePokemon, loading }) {
 
             <img style={{width:300,  background:' rgb(212,30,0)',background:' radial-gradient(circle, rgba(212,30,0,1) 0%, rgba(254,235,160,1) 70%)'}} src={singlePokemon.img} alt={singlePokemon.name}></img>
             <h2>{upperCase(singlePokemon.name)}</h2>
-            <h3>hp : {singlePokemon.hp}</h3>
-            <h3>attack : {singlePokemon.attack}</h3>
-            <h3>defense : {singlePokemon.defense}</h3>
-            <h3>special-attack : {singlePokemon.specialAttack}</h3>
-            <h3>special-defense : {singlePokemon.specialDefense}</h3>
-            <h3>speed : {singlePokemon.speed}</h3>
+            {singlePokemon.types.map(type=><h2 key={uuidv4()}>{upperCase(type.type.name)}</h2>)}
+            {singlePokemon.stats.map(stat=><h3 key={uuidv4()}>{stat.stat.name} : {stat.base_stat}</h3>)}
 
 
         </div>
