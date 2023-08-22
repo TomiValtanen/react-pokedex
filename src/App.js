@@ -90,15 +90,16 @@ function App() {
 
   function pokemonName(e) {
     //console.log(e.currentTarget.id,"sinkkupokelle tiedot")
-    pokemon.map(poke => {
-      if (poke.data.id == e.currentTarget.id) {
-        setSinglePoke({
-          name: poke.data.name,
-          types: poke.data.types.map(type => type),
-          img: poke.data.sprites.front_default,
-          stats:poke.data.stats.map(stat=>stat)
-        })
+    pokemon.forEach((poke)=>{
+      if (Number(poke.data.id) === Number(e.currentTarget.id)) {
+        const singlePokemon={
+        name: poke.data.name,
+        types: poke.data.types.map(type => type),
+        img: poke.data.sprites.front_default,
+        stats:poke.data.stats.map(stat=>stat)
       }
+      setSinglePoke(singlePokemon)
+    }
     })
   }
 

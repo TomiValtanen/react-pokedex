@@ -54,7 +54,7 @@ function Pokemon({ singlePokemon, loading }) {
     return (
         <div style={style}>
 
-            <img style={{width:300,  background:' rgb(212,30,0)',background:' radial-gradient(circle, rgba(212,30,0,1) 0%, rgba(254,235,160,1) 70%)'}} src={singlePokemon.img} alt={singlePokemon.name}></img>
+            <img style={{width:300,background:' radial-gradient(circle, rgba(212,30,0,1) 0%, rgba(254,235,160,1) 70%)'}} src={singlePokemon.img} alt={singlePokemon.name}></img>
             <h2 style={{marginBottom:"10px"}}>{upperCase(singlePokemon.name)}</h2>
             <div style={{gap:"20px",display:"flex",flexDirection:"row",flexWrap:"wrap",marginBottom:"10px"}}>
             {singlePokemon.types.map(type=><span style={{display:"flex",justifyContent:"center",alignItems:"center",fontWeight:"bold",borderRadius:"10px",border:"1px solid black",height:"40px",width:"90px",backgroundColor:pokemonColors(type.type.name)}} key={uuidv4()}>{upperCase(type.type.name)}</span>)}
