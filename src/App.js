@@ -103,8 +103,8 @@ function App() {
     })
   }
 
-  console.log(pokemon, "kaikki")
-  console.log(singlePoke)
+  //console.log(pokemon, "kaikki")
+  //console.log(singlePoke)
 
   return (
     <div className="App">
