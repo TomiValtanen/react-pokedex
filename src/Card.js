@@ -4,6 +4,7 @@ import { useState } from "react"
 
 
 function Card(props) {
+
   const cardContainer = {
     padding:"20px",
     display: "flex",
